@@ -1,0 +1,24 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        total_subsets = 1 << n  # 2^n
+        ans = []
+        for num in range(total_subsets): # use num not nums bcoz it is already decleared
+            temp = []
+            for i in range(n):
+                if (num & (1 << i)) != 0:  # num upto 0 to 7
+                    temp.append(nums[i])
+            ans.append(temp)
+        return ans
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        total_subsets = 1 << n  # 2^n
+        ans = []
+        for num in range(total_subsets): #dont use nums bcoz aready decleared so i used num
+            temp = []
+            for i in range(n):
+                if (num & (1 << i)) != 0:  #num upto 0 to 7
+                    temp.append(nums[i])
+            ans.append(temp)
+        return ans
+
